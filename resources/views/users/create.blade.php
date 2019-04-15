@@ -6,7 +6,8 @@
             <div class="card-header">       
             <h5>注册</h5>    
         </div>     
-       <div class="card-body">       
+       <div class="card-body">
+           @include('shared._error')
           <form method="POST" action="{{ route('users.store') }}">
 
               <input type="hidden" name="_token" value="{{csrf_token()}}">
