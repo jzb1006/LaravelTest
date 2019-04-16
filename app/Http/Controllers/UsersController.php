@@ -12,7 +12,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth',[
-            'except'=>['show','create','store']
+            'except'=>['show','create','store','userList']
         ]);
     }
 
@@ -66,8 +66,15 @@ class UsersController extends Controller
         return redirect()->route('users.show',$user->id);
     }
 
-    public function userList(User $user){
-        $all = $user::all();
-        return view('users.list',compact('all'));
+    public function userList(){
+        $users = User::paginate(10);
+        return view('users.list',compact('users'));
+    }
+
+    public function destroy(User $user){
+        $this->authorize('destroy',$user);
+        $user->delete();
+        session()->flash('success','成功删除用户');
+        return back();
     }
 }
