@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Policies\UserPolicy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,5 +64,10 @@ class UsersController extends Controller
 
         session()->flash('success','更改个人资料成功');
         return redirect()->route('users.show',$user->id);
+    }
+
+    public function userList(User $user){
+        $all = $user::all();
+        return view('users.list',compact('all'));
     }
 }
