@@ -23,7 +23,15 @@
                         <input type="text" name="password" class="form-control" value="{{old('password')}}">
                     </label>
                 </div>
-
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox">请记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">登陆</button>
 
             </form>
