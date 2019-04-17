@@ -30,7 +30,7 @@ class SessionsController extends Controller
             //yes
             if(Auth::user()->activated){
                 session()->flash('success','欢迎回来');
-                $fallback =  redirect()->route('users.show',[Auth::user()]);
+                $fallback =  route('users.show',[Auth::user()]);
                 return redirect()->intended($fallback);
             }else{
                 Auth::logout();
