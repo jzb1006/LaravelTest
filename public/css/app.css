@@ -10708,3 +10708,23 @@ footer img.brand-icon {
   max-width: 100px;
 }
 
+/* Users list */
+
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.users li {
+  overflow: auto;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
+}
+

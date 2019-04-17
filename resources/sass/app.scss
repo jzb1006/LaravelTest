@@ -2,7 +2,6 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
 body{
   font-size: 14px;
   font-weight: normal;
@@ -48,7 +47,7 @@ footer{
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid #ddd;
   }
 }
 .delete-btn {
